@@ -22,7 +22,7 @@ public class A3 {
 		for(int obj:a)
 		{
 			if(obj >= l && obj <=u) {
-				System.out.println(obj);
+				System.out.print(obj+" ");
 			}
 			
 		}
