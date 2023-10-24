@@ -21,7 +21,7 @@ public class A4 {
 		for(int obj:a)
 		{
 			if(obj%2 == 0) {
-				System.out.println(obj);
+				System.out.print(obj+" ");
 			}
 			
 		}
