@@ -1,7 +1,6 @@
 package w2Assignment3;
 import java.util.Scanner;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 class DuplicateNumberException extends RuntimeException {
 
@@ -17,30 +16,35 @@ public class A5 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		Set<Integer> nSet = new HashSet<>();
-
-		while (true) {
-			System.out.print("Enter an integer or 'c' to close: ");
-			String input = sc.nextLine();
-
-			if (input.equalsIgnoreCase("c")) {
-				break;
-			}
-
+	
+		int[] a=new int[6];
+		for(int i=0; i<a.length;i++) {
+			System.out.print("Enter integer " + (i + 1) + ": ");
+			a[i] = sc.nextInt();
+		
+		}
+		int flag=0;
+		for(int i=0; i<a.length;i++) {
+			
+		if(i>=a.length-1) {
+			break;
+		}
 			try {
-				int number = Integer.parseInt(input);
-				if (!nSet.add(number)) {
+				
+				if (a[i]==a[i+1]) {
+					
 					throw new DuplicateNumberException();
 				}
 			} catch (DuplicateNumberException e) {
-				System.err.println("Error: Duplicate no found: "+Integer.parseInt(input));
-
+				flag=1;
+				System.err.println("Error: Duplicate no found: "+a[i]);
 			}
-			if (Integer.parseInt(input)==6) {
-	            System.out.println("No duplicate numbers!");
-	            break;
-	        }
 		}
+			if (flag!=1) {
+	            System.out.println("No duplicate numbers!");
+	          
+	        }
+		
 		
 	}
 }
