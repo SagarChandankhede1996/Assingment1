@@ -21,7 +21,7 @@ public class A4 {
 			if(n.length<c||c<0) {
 				throw new IndexOutOfBoundsException();
 			} else {
-				System.out.println("index condition satisfied");
+				System.out.println("a value of array["+c+"] is : "+n[c]);
 			}
 		} catch (Exception i) {
 			System.err.println("Out of bound");
