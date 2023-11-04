@@ -31,10 +31,13 @@ public class A5 {
 		}
 			try {
 				
-				if (a[i]==a[i+1]) {
-					
-					throw new DuplicateNumberException();
+				for(int j=i+1;j<a.length;j++) {
+					if (a[i]==a[j]) {
+						
+						throw new DuplicateNumberException();
+					}
 				}
+				
 			} catch (DuplicateNumberException e) {
 				flag=1;
 				System.err.println("Error: Duplicate no found: "+a[i]);
